@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+         <link rel="stylesheet" href="style.css" />
+        <title>Test html pratique</title>
+    </head>
+
+    <body>
+    	
+    	<div id="bloc_page">
+		    <section>
+		    	
+		    	<div id="slider-container"></div>
+		    	
+		    	<button id="btn-left">gauche</button>
+		    	<button id="btn-right">droite</button>
+		    
+		    </section>
+		    	
+
+
+	    	
+	    
+	    </div>
+
+
+	    <script src="generateur4.js"></script>
+    </body>
+</html>
+<!--
+var nombre = Number(prompt("choisissez une option"));
+
+/* traditionellement pour déclarer un objet constructeur, on commence par une majuscule et 
+ cet objet : c'est le constructeur d'un seul contact pas de plusieurs contacts à la fois, donc je l'appelle 'Contact' */
+
+var Contact = {
+	init: function (nom, prenom) {
+	this.nom = nom;
+	this.prenom = prenom;
+	},
+
+	decrire: function () {
+
+		var description = " Nom: " + this.nom + "," + " prénom: " + this.prenom ;
+		return description; 
+	}
+};
+
+// ici, je crée mes 2 instances de Contact
+
+var contact1 = Object.create(Contact);
+contact1.init("Lévisse", "Carole");
+
+var contact2 = Object.create(Contact);
+contact2.init("Nelsonne", "Mélodie");
+
+var contacts = [];
+
+contacts.push(contact1);
+contacts.push(contact2);
+
+
+
+while ( nombre !== 0)
+{
+	if (nombre === 1) 
+	{
+		console.log("Voici la liste de contacts :");
+		/* 
+		A cet endroit, je lance mon forEach, c'est à dire que je parcours
+		tous mes contacts un par un (tu en as créé 2 que tu as ajoutés au 
+		tableau) et pour chacun j'appelle sa méthode 'décrire()'	
+		*/
+		contacts.forEach(function(contact_) {
+			console.log(contact_.decrire());
+			// j'appelle la valeur utilisée à chaque tour de boucle forEach 'contact_'
+
+		});
+		nombre = Number(prompt("choisissez une option"));
+
+	}
+	else if (nombre === 2)
+	{
+
+		console.log("ajouter un contact");
+		nombre = Number(prompt("choisissez une option"));
+	}
+	else if (nombre === 0)
+	{
+
+		console.log("au-revoir");
+
+	}
+	else {
+		nombre = Number(prompt("choisissez une option"));		
+	}
+
+}
